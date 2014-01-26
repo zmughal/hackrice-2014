@@ -8,11 +8,12 @@ import edu.uh.carvis.R;
 
 import java.net.*;
 import java.io.*;
+import java.util.List;
 
 /**
  * Created by zaki on 1/25/14.
  */
-public class FuelMap extends Activity {
+public class FuelMap extends Activity implements FuelInfoCompleted {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,29 +25,29 @@ public class FuelMap extends Activity {
 
         LatLng sydney = new LatLng(-33.867, 151.206);
 
-        try {
-            URL oracle = new URL("http://www.oracle.com/");
-
-            URLConnection yc = oracle.openConnection();
-            BufferedReader in = new BufferedReader(new InputStreamReader(
-                    yc.getInputStream()));
-            String inputLine;
-            while ((inputLine = in.readLine()) != null) {
-                System.out.print("|||||-");
-                System.out.println(inputLine);
-            }
-            in.close();
-        } catch( IOException e ) {
-            e.printStackTrace();
-        }
 
 
-        map.setMyLocationEnabled(true);
+        //map.setMyLocationEnabled(true);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
 
         map.addMarker(new MarkerOptions()
                 .title("Sydney")
                 .snippet("The most populous city in Australia.")
                 .position(sydney));
+
+        try {
+            RetrieverFuelInfo r = new RetrieverFuelInfo(this);
+            r.execute(new URL("http://enetdown.org:3000/api/fuel/0/0"));
+        } catch( MalformedURLException e ) {
+            /* TODO */
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onTaskCompleted(List<FuelInfo> f) {
+        for( FuelInfo i : f ) {
+            System.out.println("|||||"+ i );
+        }
     }
 }
