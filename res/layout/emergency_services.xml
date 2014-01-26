@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingBottom="10dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+		>
+
+	<TextView
+			style="?android:attr/listSeparatorTextViewStyle"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Call 911"
+			android:layout_marginBottom="2dp"
+			/>
+	<SeekBar android:id="@+id/dial911"
+	         android:layout_height="wrap_content"
+	         android:layout_width="fill_parent"
+	         android:max="100"
+	         android:progressDrawable="@drawable/dial_911_seeker"
+	         android:thumb="@drawable/seeker_thumb"
+			/>
+
+	<TextView
+			style="?android:attr/listSeparatorTextViewStyle"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Accident Information"
+			android:layout_marginBottom="2dp"
+	        android:layout_marginTop="10dp"
+			/>
+	<Button
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="20dp"
+	    android:text="New Incident Report"
+	    />
+	<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textSize="20dp"
+			android:text="Edit My Information"
+			/>
+	<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textSize="20dp"
+			android:text="Existing Incident Reports"
+			/>
+</LinearLayout>
