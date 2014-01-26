@@ -55,7 +55,8 @@
         </activity>
         <activity android:name=".fuelmap.FuelMap"/>
 		<activity android:name=".emergency.EmergencyServicesActivity"/>
-	</application>
+	    <activity android:name=".emergency.IncidentReportActivity"/>
+    </application>
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>

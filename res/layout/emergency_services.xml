@@ -37,13 +37,26 @@
 	    android:layout_height="wrap_content"
 	    android:textSize="20dp"
 	    android:text="New Incident Report"
+	    android:onClick="newIncident"
 	    />
-	<Button
-			android:layout_width="fill_parent"
+	<LinearLayout android:orientation="horizontal"
 			android:layout_height="wrap_content"
-			android:textSize="20dp"
-			android:text="Edit My Information"
-			/>
+			android:layout_width="fill_parent">
+		<Button
+				android:layout_width="0px"
+				android:layout_height="wrap_content"
+				android:textSize="20dp"
+				android:layout_weight="0.5"
+				android:text="Edit My Info"
+				/>
+		<Button
+				android:layout_width="0px"
+				android:layout_height="wrap_content"
+				android:textSize="20dp"
+				android:layout_weight="0.5"
+				android:text="View My Info"
+				/>
+	</LinearLayout>
 	<Button
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
