@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import edu.uh.carvis.emergency.EmergencyServicesActivity;
+import edu.uh.carvis.fuelmap.FuelMap;
 
 /**
  * Created by Tanmay_Local on 1/25/14.
