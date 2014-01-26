@@ -5,7 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import edu.uh.carvis.emergency.EmergencyServicesActivity;
+<<<<<<< HEAD
 import edu.uh.carvis.fuelmap.FuelMap;
+=======
+import edu.uh.carvis.fuel.FuelCalculatorActivity;
+
+>>>>>>> Adding FuelCalculator
 
 /**
  * Created by Tanmay_Local on 1/25/14.
@@ -26,4 +31,9 @@ public class StartScreen extends Activity {
 		Intent intent = new Intent(this, EmergencyServicesActivity.class);
 		startActivity(intent);
 	}
+
+    public void launchFuelCalculator(View v) {
+        Intent intent = new Intent(this, FuelCalculatorActivity.class);
+        startActivity(intent);
+    }
 }
