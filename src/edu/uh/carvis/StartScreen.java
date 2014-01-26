@@ -5,12 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import edu.uh.carvis.emergency.EmergencyServicesActivity;
-<<<<<<< HEAD
 import edu.uh.carvis.fuelmap.FuelMap;
-=======
 import edu.uh.carvis.fuel.FuelCalculatorActivity;
-
->>>>>>> Adding FuelCalculator
 
 /**
  * Created by Tanmay_Local on 1/25/14.
