@@ -1,14 +1,11 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
 
-# Documentation browser under "/perldoc"
-plugin 'PODRenderer';
-
 get '/api/fuel/:lat/:lng' => sub {
   my $self = shift;
   $self->render(json => [
-	{ name => 'Shell', lat => '29.7169', lon => '-95.4028' },
-	{ name => 'Exxon', lat => '29.718922', lon => '-95.339162' },
+	{ name => 'Shell', lat => '29.7169', lon => '-95.4028', price => '$2.73' },
+	{ name => 'Exxon', lat => '29.718922', lon => '-95.339162', price => '$2.75' },
   ]);
 };
 
