@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		>
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="Personal Information"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Full Name"
+				android:layout_marginBottom="5dp"
+		        android:id="@+id/full_name"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Address Line 1"
+		        android:id="@+id/address_1"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Address Line 2"
+				android:id="@+id/address_2"
+				/>
+		<LinearLayout android:orientation="horizontal"
+		              android:layout_width="fill_parent"
+		              android:layout_height="wrap_content"
+		              android:layout_marginBottom="5dp">
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.6"
+					android:hint="City"
+					android:id="@+id/city"
+					/>
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					android:hint="State"
+					android:id="@+id/state"
+					/>
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					android:hint="Zip"
+					android:id="@+id/zipcode"
+					/>
+		</LinearLayout>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Phone Number"
+				android:id="@+id/phone_number"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Email Address"
+				android:layout_marginBottom="5dp"
+				android:id="@+id/email"
+				/>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="Vehicle Information"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+				/>
+		<LinearLayout android:orientation="horizontal"
+		              android:layout_width="fill_parent"
+		              android:layout_height="wrap_content"
+				>
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.6"
+					android:hint="Make"
+					android:id="@+id/vehicle_make"
+					/>
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					android:hint="Model"
+					android:id="@+id/vehicle_model"
+					/>
+			<EditText
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					android:hint="Year"
+					android:id="@+id/vehicle_year"
+					/>
+		</LinearLayout>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="License Plate"
+				android:layout_marginBottom="5dp"
+				android:id="@+id/license_plate"
+				/>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="Insurance Information"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Insurance Carrier"
+				android:id="@+id/insurance_carrier"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Policy Number"
+				android:id="@+id/policy_number"
+				/>
+		<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Insurance Phone Number"
+		        android:layout_marginBottom="20dp"
+		        android:id="@+id/insurance_phone_number"
+				/>
+		<Button android:text="Save"
+		        android:layout_height="wrap_content"
+		        android:layout_width="fill_parent"
+		        android:onClick="saveIncidentReport"
+				/>
+	</LinearLayout>
+</ScrollView>

@@ -25,6 +25,13 @@ public class EmergencyServicesActivity extends Activity {
 		seekBar.setOnSeekBarChangeListener(new Dial911Listener());
 	}
 
+	public void newIncident(View v) {
+		Intent intent = new Intent(this, IncidentReportActivity.class);
+		intent.putExtra(IncidentReportActivity.EXTRA_ACTIVITY_TYPE, IncidentReportActivity.ACTIVITY_TYPE_NEW);
+
+		startActivity(intent);
+	}
+
 	class Dial911Listener implements SeekBar.OnSeekBarChangeListener {
 
 		private static final double percentage = 0.85;
