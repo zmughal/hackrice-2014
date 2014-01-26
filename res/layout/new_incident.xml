@@ -22,20 +22,20 @@
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Full Name"
+				android:text="Full Name"
 				android:layout_marginBottom="5dp"
 		        android:id="@+id/full_name"
 				/>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Address Line 1"
+				android:text="Address Line 1"
 		        android:id="@+id/address_1"
 				/>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Address Line 2"
+				android:text="Address Line 2"
 				android:id="@+id/address_2"
 				/>
 		<LinearLayout android:orientation="horizontal"
@@ -46,34 +46,34 @@
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
 					android:layout_weight="0.6"
-					android:hint="City"
+					android:text="City"
 					android:id="@+id/city"
 					/>
 			<EditText
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
 					android:layout_weight="0.2"
-					android:hint="State"
+					android:text="State"
 					android:id="@+id/state"
 					/>
 			<EditText
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
 					android:layout_weight="0.2"
-					android:hint="Zip"
+					android:text="Zip"
 					android:id="@+id/zipcode"
 					/>
 		</LinearLayout>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Phone Number"
+				android:text="Phone Number"
 				android:id="@+id/phone_number"
 				/>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Email Address"
+				android:text="Email Address"
 				android:layout_marginBottom="5dp"
 				android:id="@+id/email"
 				/>
@@ -92,29 +92,29 @@
 			<EditText
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
-					android:layout_weight="0.6"
-					android:hint="Make"
+					android:layout_weight="0.4"
+					android:text="Make"
 					android:id="@+id/vehicle_make"
 					/>
 			<EditText
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
-					android:layout_weight="0.2"
-					android:hint="Model"
+					android:layout_weight="0.4"
+					android:text="Model"
 					android:id="@+id/vehicle_model"
 					/>
 			<EditText
 					android:layout_width="0px"
 					android:layout_height="wrap_content"
 					android:layout_weight="0.2"
-					android:hint="Year"
+					android:text="Year"
 					android:id="@+id/vehicle_year"
 					/>
 		</LinearLayout>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="License Plate"
+				android:text="License Plate"
 				android:layout_marginBottom="5dp"
 				android:id="@+id/license_plate"
 				/>
@@ -129,19 +129,19 @@
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Insurance Carrier"
+				android:text="Insurance Carrier"
 				android:id="@+id/insurance_carrier"
 				/>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Policy Number"
+				android:text="Policy Number"
 				android:id="@+id/policy_number"
 				/>
 		<EditText
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="Insurance Phone Number"
+				android:text="Insurance Phone Number"
 		        android:layout_marginBottom="20dp"
 		        android:id="@+id/insurance_phone_number"
 				/>

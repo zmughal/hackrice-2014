@@ -5,8 +5,15 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import edu.uh.carvis.R;
 import edu.uh.carvis.database.CarvisDatabaseHelper;
+
+import java.lang.reflect.TypeVariable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Eric
@@ -44,6 +51,23 @@ public class IncidentReportActivity extends Activity {
 	}
 
 	public void saveIncidentReport(View v) {
-		
+		List<TextView> list = new ArrayList<TextView>();
+		list.add((TextView)findViewById(R.id.full_name));
+		list.add((TextView)findViewById(R.id.address_1));
+		list.add((TextView)findViewById(R.id.address_2));
+		list.add((TextView)findViewById(R.id.city));
+		list.add((TextView)findViewById(R.id.state));
+		list.add((TextView)findViewById(R.id.zipcode));
+		list.add((TextView)findViewById(R.id.phone_number));
+		list.add((TextView)findViewById(R.id.email));
+		list.add((TextView)findViewById(R.id.vehicle_make));
+		list.add((TextView)findViewById(R.id.vehicle_model));
+		list.add((TextView)findViewById(R.id.vehicle_year));
+		list.add((TextView)findViewById(R.id.license_plate));
+		list.add((TextView)findViewById(R.id.insurance_carrier));
+		list.add((TextView)findViewById(R.id.policy_number));
+		list.add((TextView)findViewById(R.id.insurance_phone_number));
+
+		database.runStatement(R.raw.insert_incident_report, list);
 	}
 }
