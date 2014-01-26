@@ -4,11 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
-import android.content.Intent;
-=======
 import edu.uh.carvis.emergency.EmergencyServicesActivity;
->>>>>>> Emergency Services module
 
 /**
  * Created by Tanmay_Local on 1/25/14.
