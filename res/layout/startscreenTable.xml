@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+                android:padding="10dp">
+
+    <LinearLayout
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_width="fill_parent">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/Carvis"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:padding="10dp"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="12">
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton1"
+                android:src="@drawable/gas_can" android:layout_width="0px" android:layout_weight="1"/>
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:src="@drawable/Maintainance" android:layout_width="0px" android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:padding="10dp"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="12">
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton1"
+                android:src="@drawable/dollar" android:layout_width="0px" android:layout_weight="1"/>
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:src="@drawable/red_cross" android:layout_width="0px" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:padding="10dp"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="12">
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton1"
+                android:src="@drawable/graph" android:layout_width="0px" android:layout_weight="1"/>
+        <ImageButton
+                android:scaleType="centerInside"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:src="@drawable/Map" android:layout_width="0px" android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</LinearLayout>
