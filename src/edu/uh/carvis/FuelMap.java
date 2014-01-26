@@ -1,5 +1,7 @@
 package edu.uh.carvis;
 
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
 import android.app.Activity;
 import android.os.Bundle;
 
