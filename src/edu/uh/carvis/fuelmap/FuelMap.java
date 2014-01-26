@@ -14,26 +14,16 @@ import java.util.List;
  * Created by zaki on 1/25/14.
  */
 public class FuelMap extends Activity implements FuelInfoCompleted {
+    GoogleMap map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_activity);
 
         // Get a handle to the Map Fragment
-        GoogleMap map = ((MapFragment) getFragmentManager()
+        this.map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
-
-        LatLng sydney = new LatLng(-33.867, 151.206);
-
-
-
-        //map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-
-        map.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
 
         try {
             RetrieverFuelInfo r = new RetrieverFuelInfo(this);
@@ -46,8 +36,16 @@ public class FuelMap extends Activity implements FuelInfoCompleted {
 
     @Override
     public void onTaskCompleted(List<FuelInfo> f) {
+        LatLngBounds.Builder bndsBuild = LatLngBounds.builder();
         for( FuelInfo i : f ) {
             System.out.println("|||||"+ i );
+            LatLng pos = i.getLatLng();
+            bndsBuild.include( pos );
+            map.addMarker(new MarkerOptions()
+                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+                .title(i.getName() + " - " + i.getPrice() )
+                .position(pos));
+            map.moveCamera(CameraUpdateFactory.newLatLngBounds(bndsBuild.build(), 200));
         }
     }
 }
