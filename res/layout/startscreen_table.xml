@@ -23,7 +23,8 @@
                 android:scaleType="centerInside"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton1"
-                android:src="@drawable/gas_can" android:layout_width="0px" android:layout_weight="1"/>
+                android:src="@drawable/gas_can" android:layout_width="0px" android:layout_weight="1"
+                android:onClick="launchFuelCalculator" />
         <ImageButton
                 android:scaleType="centerInside"
                 android:layout_height="wrap_content"

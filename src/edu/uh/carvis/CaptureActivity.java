@@ -185,6 +185,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	private static final String sourceLanguageReadable = "English";
 
 	public static final String EXTRA_OCR_RESULT = "ocr_result";
+    public static final int RESULT_ID=CaptureActivity.class.getName().hashCode();
 
 	// Options menu, for copy to clipboard
 	private static final int OPTIONS_COPY_RECOGNIZED_TEXT_ID = Menu.FIRST;
