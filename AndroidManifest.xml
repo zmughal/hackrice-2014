@@ -54,6 +54,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".fuelmap.FuelMap"/>
+        <activity android:name=".trafficmap.TrafficMap"/>
 		<activity android:name=".emergency.EmergencyServicesActivity"/>
 	    <activity android:name=".emergency.IncidentReportActivity"/>
         <activity android:name=".fuel.FuelCalculatorActivity"/>
