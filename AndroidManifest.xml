@@ -46,7 +46,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FuelMap"/>
-    </application>
+		<activity android:name=".emergency.EmergencyServicesActivity"/>
+	</application>
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
