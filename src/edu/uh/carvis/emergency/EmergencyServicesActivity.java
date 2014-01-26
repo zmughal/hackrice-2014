@@ -32,6 +32,28 @@ public class EmergencyServicesActivity extends Activity {
 		startActivity(intent);
 	}
 
+	public void editMyInfo(View v) {
+		Intent intent = new Intent(this, IncidentReportActivity.class);
+		intent.putExtra(IncidentReportActivity.EXTRA_ACTIVITY_TYPE, IncidentReportActivity.ACTIVITY_TYPE_EDIT_ME);
+
+		startActivity(intent);
+	}
+
+	public void viewMyInfo(View v) {
+		Intent intent = new Intent(this, IncidentReportActivity.class);
+		intent.putExtra(IncidentReportActivity.EXTRA_ACTIVITY_TYPE, IncidentReportActivity.ACTIVITY_TYPE_VIEW_ME);
+
+		startActivity(intent);
+	}
+
+	public void viewExistingIncidents(View v) {
+		Intent intent = new Intent(this, IncidentReportActivity.class);
+		intent.putExtra(IncidentReportActivity.EXTRA_ACTIVITY_TYPE, IncidentReportActivity.ACTIVITY_TYPE_EXISTING);
+
+		startActivity(intent);
+	}
+
+
 	class Dial911Listener implements SeekBar.OnSeekBarChangeListener {
 
 		private static final double percentage = 0.85;

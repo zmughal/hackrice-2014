@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		>
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+		        android:text="Personal Information"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="5dp"
+		        android:id="@+id/full_name"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/address_1"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/address_2"
+				/>
+		<LinearLayout android:orientation="horizontal"
+		              android:layout_width="fill_parent"
+		              android:layout_height="wrap_content"
+		              android:layout_marginBottom="5dp">
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.6"
+					
+					android:id="@+id/city"
+					/>
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					
+					android:id="@+id/state"
+					/>
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					
+					android:id="@+id/zipcode"
+					/>
+		</LinearLayout>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/phone_number"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="5dp"
+				android:id="@+id/email"
+				/>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+				android:text="Vehicle Information"
+				/>
+		<LinearLayout android:orientation="horizontal"
+		              android:layout_width="fill_parent"
+		              android:layout_height="wrap_content"
+				>
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.4"
+					
+					android:id="@+id/vehicle_make"
+					/>
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.4"
+					
+					android:id="@+id/vehicle_model"
+					/>
+			<TextView
+					android:layout_width="0px"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.2"
+					
+					android:id="@+id/vehicle_year"
+					/>
+		</LinearLayout>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="5dp"
+				android:id="@+id/license_plate"
+				/>
+		<TextView
+				style="?android:attr/listSeparatorTextViewStyle"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:layout_marginTop="10dp"
+				android:text="Insurance Information"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/insurance_carrier"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/policy_number"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="20dp"
+		        android:id="@+id/insurance_phone_number"
+				/>
+		<Button 
+		        android:layout_height="wrap_content"
+		        android:layout_width="fill_parent"
+		        android:onClick="end"
+		        android:text="Back"
+				/>
+	</LinearLayout>
+</ScrollView>
