@@ -8,5 +8,5 @@ import java.util.List;
 
 
 public interface FuelInfoCompleted {
-    void onTaskCompleted(List<FuelInfo> f);
+	void onTaskCompleted(List<FuelInfo> f);
 }

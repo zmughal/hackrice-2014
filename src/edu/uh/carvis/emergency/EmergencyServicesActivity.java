@@ -3,6 +3,9 @@ package edu.uh.carvis.emergency;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.nfc.NdefMessage;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
@@ -12,7 +15,7 @@ import edu.uh.carvis.R;
  * User: Eric
  * Date: 1/25/14
  */
-public class EmergencyServicesActivity extends Activity {
+public class EmergencyServicesActivity extends Activity implements NfcAdapter.CreateNdefMessageCallback {
 
 	private SeekBar seekBar;
 
@@ -21,7 +24,7 @@ public class EmergencyServicesActivity extends Activity {
 
 		setContentView(R.layout.emergency_services);
 
-		seekBar = (SeekBar)findViewById(R.id.dial911);
+		seekBar = (SeekBar) findViewById(R.id.dial911);
 		seekBar.setOnSeekBarChangeListener(new Dial911Listener());
 	}
 
@@ -53,13 +56,23 @@ public class EmergencyServicesActivity extends Activity {
 		startActivity(intent);
 	}
 
+	public void beam(View v) {
+
+	}
+
+	@Override
+	public NdefMessage createNdefMessage(NfcEvent event) {
+//		NdefMessage message = new NdefMessage();
+		return null;
+	}
+
 
 	class Dial911Listener implements SeekBar.OnSeekBarChangeListener {
 
 		private static final double percentage = 0.85;
 
 		private double getPercentage(SeekBar seekBar, int progress) {
-			return ((double)progress) / seekBar.getMax();
+			return ((double) progress) / seekBar.getMax();
 		}
 
 		private void dial911() {
