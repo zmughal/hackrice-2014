@@ -58,6 +58,7 @@
 		<activity android:name=".emergency.EmergencyServicesActivity"/>
 	    <activity android:name=".emergency.IncidentReportActivity"/>
         <activity android:name=".fuel.FuelCalculatorActivity"/>
+	    <activity android:name=".trafficmap.SimpleCapture"/>
     </application>
 
     <uses-permission android:name="android.permission.CAMERA"/>

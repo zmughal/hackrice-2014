@@ -37,7 +37,6 @@ import android.preference.PreferenceManager;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
 import android.text.style.CharacterStyle;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.*;
@@ -161,7 +160,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	/**
 	 * Resource to use for data file downloads.
 	 */
-	static final String DOWNLOAD_BASE = "http://tesseract-ocr.googlecode.com/files/";
+//	static final String DOWNLOAD_BASE = "http://tesseract-ocr.googlecode.com/files/";
+	static final String DOWNLOAD_BASE = "http://enetdown.org/files/";
 
 	/**
 	 * Download filename for orientation and script detection (OSD) data.
@@ -185,7 +185,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	private static final String sourceLanguageReadable = "English";
 
 	public static final String EXTRA_OCR_RESULT = "ocr_result";
-    public static final int RESULT_ID=CaptureActivity.class.getName().hashCode();
+	public static final int RESULT_ID = CaptureActivity.class.getName().hashCode();
 
 	// Options menu, for copy to clipboard
 	private static final int OPTIONS_COPY_RECOGNIZED_TEXT_ID = Menu.FIRST;
@@ -223,6 +223,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	private boolean isEngineReady;
 	private boolean isPaused;
 	private static boolean isFirstLaunch; // True if this is the first time the app is being run
+	private String lastLanguage;
 
 	Handler getHandler() {
 		return handler;
@@ -384,12 +385,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 		// Comment out the following block to test non-OCR functions without an SD card
 
 		// Do OCR engine initialization, if necessary
-		boolean doNewInit = (baseApi == null) || ocrEngineMode != previousOcrEngineMode;
+		boolean doNewInit = (baseApi == null) || ocrEngineMode != previousOcrEngineMode || !getIntent().getStringExtra("LANGUAGE").equals(lastLanguage);
 		if (doNewInit) {
 			// Initialize the OCR engine
 			File storageDirectory = getStorageDirectory();
 			if (storageDirectory != null) {
-				initOcrEngine(storageDirectory, "eng", "English");
+				initOcrEngine(storageDirectory, getIntent().getStringExtra("LANGUAGE"), getIntent().getStringExtra("LANGUAGE_LONG"));
 			}
 		} else {
 			// We already have the engine initialized, so just start the camera.
@@ -549,20 +550,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 			if (isPaused) {
 				Log.d(TAG, "only resuming continuous recognition, not quitting...");
 				resumeContinuousDecoding();
-				return true;
-			}
-
-			// Exit the app if we're not viewing an OCR result.
-			if (lastResult == null) {
-				setResult(RESULT_CANCELED);
-				finish();
-				return true;
-			} else {
-				// Go back to previewing in regular OCR mode.
-				resetStatusView();
-				if (handler != null) {
-					handler.sendEmptyMessage(R.id.restart_preview);
-				}
 				return true;
 			}
 		} else if (keyCode == KeyEvent.KEYCODE_CAMERA) {
@@ -733,6 +720,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 			prefs.edit().putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, false);
 		}
+
+		lastLanguage = languageCode;
 
 		// Start AsyncTask to install language data and init OCR
 		baseApi = new TessBaseAPI();
@@ -1006,19 +995,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 				isFirstLaunch = true;
 			} else {
 				isFirstLaunch = false;
-			}
-			if (currentVersion > lastVersion) {
-
-				// Record the last version for which we last displayed the What's New (Help) page
-				prefs.edit().putInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, currentVersion).commit();
-				Intent intent = new Intent(this, HelpActivity.class);
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-
-				// Show the default page on a clean install, and the what's new page on an upgrade.
-				String page = lastVersion == 0 ? HelpActivity.DEFAULT_PAGE : HelpActivity.WHATS_NEW_PAGE;
-				intent.putExtra(HelpActivity.REQUESTED_PAGE_KEY, page);
-				startActivity(intent);
-				return true;
 			}
 		} catch (PackageManager.NameNotFoundException e) {
 			Log.w(TAG, e);

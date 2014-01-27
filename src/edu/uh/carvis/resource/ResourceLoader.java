@@ -3,7 +3,6 @@ package edu.uh.carvis.resource;
 import android.content.Context;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public final class ResourceLoader {
@@ -19,8 +18,7 @@ public final class ResourceLoader {
 				builder.append(line).append('\n');
 			}
 			return builder.toString();
-		}
-		catch (Exception ioe) {
+		} catch (Exception ioe) {
 
 		}
 

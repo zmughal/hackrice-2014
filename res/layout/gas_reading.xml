@@ -35,7 +35,7 @@
                 android:layout_gravity="right"
                 android:id="@+id/imageButton2"
                 android:src="@drawable/camera"
-                android:onClick="odometer_ocr"/>
+                android:onClick="odometerOcr"/>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_weight="0.2"
                 android:id="@+id/imageButton2"
                 android:src="@drawable/camera"
-                android:onClick="fuel_ocr"/>
+                android:onClick="fuelOcr"/>
 
     </LinearLayout>
 

@@ -35,38 +35,35 @@ public class IncidentReportActivity extends Activity {
 
 		if (activityType == ACTIVITY_TYPE_NEW) {
 			setContentView(R.layout.new_incident);
-		}
-		else if (activityType == ACTIVITY_TYPE_EXISTING) {
+		} else if (activityType == ACTIVITY_TYPE_EXISTING) {
 
-		}
-		else if (activityType == ACTIVITY_TYPE_EDIT_ME) {
+		} else if (activityType == ACTIVITY_TYPE_EDIT_ME) {
 			setContentView(R.layout.edit_me);
 			initMapping();
 			populateMyInfo();
-		}
-		else if (activityType == ACTIVITY_TYPE_VIEW_ME) {
+		} else if (activityType == ACTIVITY_TYPE_VIEW_ME) {
 			setContentView(R.layout.view_me);
 			initMapping();
 			populateMyInfo();
 		}
 	}
-	
+
 	private void initMapping() {
-		columnToTextView.put("full_name", ((TextView)findViewById(R.id.full_name)));
-		columnToTextView.put("address_1", ((TextView)findViewById(R.id.address_1)));
-		columnToTextView.put("address_2", ((TextView)findViewById(R.id.address_2)));
-		columnToTextView.put("city", ((TextView)findViewById(R.id.city)));
-		columnToTextView.put("state", ((TextView)findViewById(R.id.state)));
-		columnToTextView.put("zipcode", ((TextView)findViewById(R.id.zipcode)));
-		columnToTextView.put("phone", ((TextView)findViewById(R.id.phone_number)));
-		columnToTextView.put("email", ((TextView)findViewById(R.id.email)));
-		columnToTextView.put("vehicle_make", ((TextView)findViewById(R.id.vehicle_make)));
-		columnToTextView.put("vehicle_model", ((TextView)findViewById(R.id.vehicle_model)));
-		columnToTextView.put("vehicle_year", ((TextView)findViewById(R.id.vehicle_year)));
-		columnToTextView.put("license_plate", ((TextView)findViewById(R.id.license_plate)));
-		columnToTextView.put("insurance_carrier", ((TextView)findViewById(R.id.insurance_carrier)));
-		columnToTextView.put("policy_number", ((TextView)findViewById(R.id.policy_number)));
-		columnToTextView.put("insurance_phone_number", ((TextView)findViewById(R.id.insurance_phone_number)));
+		columnToTextView.put("full_name", ((TextView) findViewById(R.id.full_name)));
+		columnToTextView.put("address_1", ((TextView) findViewById(R.id.address_1)));
+		columnToTextView.put("address_2", ((TextView) findViewById(R.id.address_2)));
+		columnToTextView.put("city", ((TextView) findViewById(R.id.city)));
+		columnToTextView.put("state", ((TextView) findViewById(R.id.state)));
+		columnToTextView.put("zipcode", ((TextView) findViewById(R.id.zipcode)));
+		columnToTextView.put("phone", ((TextView) findViewById(R.id.phone_number)));
+		columnToTextView.put("email", ((TextView) findViewById(R.id.email)));
+		columnToTextView.put("vehicle_make", ((TextView) findViewById(R.id.vehicle_make)));
+		columnToTextView.put("vehicle_model", ((TextView) findViewById(R.id.vehicle_model)));
+		columnToTextView.put("vehicle_year", ((TextView) findViewById(R.id.vehicle_year)));
+		columnToTextView.put("license_plate", ((TextView) findViewById(R.id.license_plate)));
+		columnToTextView.put("insurance_carrier", ((TextView) findViewById(R.id.insurance_carrier)));
+		columnToTextView.put("policy_number", ((TextView) findViewById(R.id.policy_number)));
+		columnToTextView.put("insurance_phone_number", ((TextView) findViewById(R.id.insurance_phone_number)));
 	}
 
 	public void saveIncidentReport(View v) {
@@ -128,6 +125,22 @@ public class IncidentReportActivity extends Activity {
 		}
 
 		cursor.close();
+	}
+
+	public ContactInfo createMyContactCard() {
+		ContactInfo info = new ContactInfo();
+
+		Cursor cursor = database.runQuery("incident_report", R.raw.query_by_id, Arrays.asList("0"));
+
+		if (cursor.moveToNext()) {
+			info.fullName = cursor.getString(cursor.getColumnIndex("full_name"));
+			info.address1 = cursor.getString(cursor.getColumnIndex("address_1"));
+			info.address2 = cursor.getString(cursor.getColumnIndex("address_2"));
+			info.fullName = cursor.getString(cursor.getColumnIndex("full_name"));
+			info.fullName = cursor.getString(cursor.getColumnIndex("full_name"));
+		}
+
+		return info;
 	}
 
 	public void end(View v) {
